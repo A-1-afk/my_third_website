@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ကျွန်တော့် Website</title>
+    
+    <!-- CSS ကို ဒီနေရာမှာ ထည့်ပါ -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Myanmar Text', sans-serif;
+        }
+        body { background: #f5f7fa; color: #333; line-height: 1.6; }
+        
+        /* Navigation */
+        .navbar { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 15px 30px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { color: #fff; font-size: 24px; font-weight: bold; background: linear-gradient(45deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { color: #cbd5e1; text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover { color: #38bdf8; }
+        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+        /* Hero */
+        .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .hero-title { font-size: 48px; margin-bottom: 20px; color: #ffd700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-text { font-size: 20px; margin-bottom: 30px; color: #ffffff; }
+
+        /* Sections */
+        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 32px; margin-bottom: 30px; color: #1e293b; }
+
+        /* Text Colors */
+        .text-red { color: #ef4444; font-size: 18px; margin: 10px 0; }
+        .text-blue { color: #3b82f6; font-size: 18px; margin: 10px 0; }
+        .text-green { color: #22c55e; font-size: 18px; margin: 10px 0; }
+        .text-gradient { font-size: 22px; font-weight: bold; margin: 20px 0; background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Buttons */
+        .button-group { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .btn { padding: 12px 28px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+        .btn-primary { background: #3b82f6; color: white; }
+        .btn-primary:hover { background: #2563eb; }
+        .btn-success { background: #22c55e; color: white; }
+        .btn-success:hover { background: #16a34a; }
+        .btn-danger { background: #ef4444; color: white; }
+        .btn-danger:hover { background: #dc2626; }
+        .btn-warning { background: #f59e0b; color: white; }
+        .btn-warning:hover { background: #d97706; }
+        .btn-outline { background: transparent; color: #3b82f6; border: 2px solid #3b82f6; }
+        .btn-outline:hover { background: #3b82f6; color: white; }
+
+        /* Form */
+        .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea { padding: 12px 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.3s; }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: #3b82f6; }
+
+        /* Footer */
+        .footer { background: #1e293b; color: #94a3b8; text-align: center; padding: 25px; margin-top: 40px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .hero-title { font-size: 32px; }
+            .hero-text { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1 class="hero-title">ကြိုဆိုပါတယ် 👋</h1>
+        <p class="hero-text">ဒါက ကျွန်တော့် ပထမဆုံး Website ပါ</p>
+        <button class="btn btn-primary" onclick="showMessage()">စတင်လိုက်ပါ</button>
+        <button class="btn btn-outline">ပိုမိုလေ့လာရန်</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">ကျွန်တော်အကြောင်း</h2>
+        <p class="text-red">ဒါက အနီရောင်စာလုံး</p>
+        <p class="text-blue">ဒါက အပြာရောင်စာလုံး</p>
+        <p class="text-green">ဒါက အစိမ်းရောင်စာလုံး</p>
+        <p class="text-gradient">ဒါက Gradient စာလုံး 🌈</p>
+    </section>
+
+    <!-- Buttons Section -->
+    <section id="services" class="section">
+        <h2 class="section-title">ခလုတ်များ</h2>
+        <div class="button-group">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-outline">Outline</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">ဆက်သွယ်ရန်</h2>
+        <form class="contact-form" onsubmit="submitForm(event)">
+            <input type="text" placeholder="သင့်နာမည်" required>
+            <input type="email" placeholder="သင့် Email" required>
+            <textarea placeholder="သင့်စာ" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">ပို့လိုက်ပါ</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 MySite. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript ကို ဒီနေရာမှာ ထည့်ပါ -->
+    <script>
+        function showMessage() {
+            alert("မင်္ဂလာပါ! Website ကို စတင်လိုက်ပါပြီ 🎉");
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            alert("သင့်စာကို ပို့ပြီးပါပြီ! ကျေးဇူးတင်ပါတယ် 💌");
+            event.target.reset();
+        }
+
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px';
+                navLinks.style.right = '20px';
+                navLinks.style.background = '#1e293b';
+                navLinks.style.padding = '15px';
+                navLinks.style.borderRadius = '8px';
+            }
+        });
+    </script>
+</body>
+</html>
